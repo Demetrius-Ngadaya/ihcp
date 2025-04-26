@@ -1,0 +1,33 @@
+# Secure the admin directory
+Options -Indexes
+
+# Prevent direct access to sensitive files
+<FilesMatch "\.(php|inc|sql|log|htaccess)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow access to specific files
+<FilesMatch "^(index\.php|login\.php|logout\.php)?$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Redirect to login if not authenticated
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ login.php [L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdn.jsdelivr.net cdn.ckeditor.com; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; img-src 'self' data:;"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Feature-Policy "geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; fullscreen 'self'; payment 'none'"
+</IfModule>
