@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="gpi.png">
-    <title>Global Path Insights Limited (GPI)</title>
+    <title>Insights Health Parters Company Limited(IHPCL)</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
           <style>
@@ -237,7 +237,7 @@
     <header class="navbar navbar-expand-lg navbar-light navbar-fixed">
         <div class="container">
             <img src="gpi.png" alt="Global Path Insights Limited" class="mb-3" style="width: 60px;">
-            <a class="navbar-brand text-primary" href="#">Global Path Insights Limited (GPI)</a>
+            <a class="navbar-brand text-primary" href="#">Insights Health Parters Company Limited(IHPCL)</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -248,6 +248,16 @@
                     <li class="nav-item"><a href="#projects" class="nav-link text-primary">Projects</a></li>
                     <li class="nav-item"><a href="#team" class="nav-link text-primary">Team</a></li>
                     <li class="nav-item"><a href="#stats" class="nav-link text-primary">Stats</a></li>
+                              <!-- Gallery Dropdown -->
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle text-primary" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Gallery
+                      </a>
+                    <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+                       <li><a class="dropdown-item" href="photos.php">Photos</a></li>
+                       <li><a class="dropdown-item" href="videos.php">Videos</a></li>
+                    </ul>
+        </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link text-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
                     </li>
